@@ -39,17 +39,17 @@ a:hover {
 	margin-top: 130px;
 }
 
-#search_bar:hover {
-	color:#66cccc;
-}
-
 #search_bar input {
 	width: 580px;
 	height: 35px;
-	/*border:1px solid #66cccc;*/
 	margin-bottom: 28px;
 	margin-left: auto;
 	margin-right: auto;
+	opacity: 0.65;
+}
+
+#search_bar input:hover {
+	opacity:1;
 }
 
 input[type="text"] {
@@ -70,7 +70,7 @@ input[type="text"] {
 }
 
 #buttons button:hover {
-
+	opacity: 1;
 }
 
 .footer {
