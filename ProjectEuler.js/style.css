@@ -1,5 +1,6 @@
 body {
   text-align:center
+  column-count:3;
 }
 
 button {

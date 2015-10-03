@@ -1,7 +1,7 @@
 function problem1() {
   var base = document.getElementById('prob1').value;
   var sum = 0;
-  for (var i=0; i<1000; i++) {
+  for (var i=0; i<base; i++) {
     if (i%3==0 || i%5==0) {
       sum += i;
     }
@@ -11,29 +11,25 @@ function problem1() {
 }
 
 function problem2() {
-  //get the sum of even fibs
-  var n = document.getElementById('prob2').value;
+  var base = document.getElementById('prob2').value;
   var sum = 0;
-  var fib;
-  var i = 0;
-  while (fib < n) {
-    fib = fib(i);
-    if (fib%2==0) {
-      sum += fib;
+  var first = 1;
+  var second = 1;
+  var num = 1;
+  while (num < base) {
+    num = first + second;
+    first = second;
+    second = num;
+
+    if (num%2==0) {
+      sum += num;
     }
-    i+=1
   }
+  
   document.getElementById('result2').innerHTML = sum;
 }
 
-function fib(n) {
-  if (n==1 || n==0) {
-    return 1;
-  }
-  return fib(n-1) + fib(n-2);
-}
-
-function largestPrimeFactor() {
+function problem3() {
   var n = document.getElementById('prob3').value;
   var max = 0;
   for (var i=0; i<(n/2); i++) {
@@ -45,7 +41,7 @@ function largestPrimeFactor() {
 }
 
 function isPrime(n) {
-  for (var i=0; i<n; i++) {
+  for (var i=2; i<n; i++) {
     if (n%i==0) {
       return false;
     }
