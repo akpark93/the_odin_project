@@ -1,9 +1,9 @@
-function problem2() {
+function problem2(n) {
   //get the sum of even fibs
   var sum = 0;
   var fib;
   var i = 0;
-  while (fib < 4000000) {
+  while (fib < n) {
     fib = fib(i);
     if (fib%2==0) {
       sum += fib;
