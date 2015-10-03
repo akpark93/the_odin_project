@@ -1,8 +1,12 @@
-body {
-  text-align:center
-  column-count:3;
-}
-
 button {
   margin: 10px;
+}
+
+.header {
+	text-align: center;
+	text-decoration:  underline;
+}
+
+.calculate {
+	display: inline;
 }
