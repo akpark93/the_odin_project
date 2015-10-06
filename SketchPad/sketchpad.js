@@ -31,14 +31,13 @@ function generateGrid(size,choice) {
 		//regular
 		case 0:
 			$('td').hover(function() {
-				$(this).css('opacity', 1);
+				$(this).css('background-color','black');
 			});
 			break;
 		//random
 		case 1:
 			$('td').hover(function() {
 				var color = generateRandomColor();
-				$(this).css('opacity',1);
 				$(this).css('background-color', color);
 			});
 			break;
@@ -51,6 +50,8 @@ function generateGrid(size,choice) {
 			break;
 		//opaque
 		case 3:
+			$('td').css('background-color','black');
+			$('td').css('opacity',0.1);
 			$('td').hover(function() {
 				$(this).css({'opacity':'+=.1'});
 			});

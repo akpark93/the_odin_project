@@ -14,8 +14,8 @@ body {
 }
 
 td {
-	background-color: #000000;
-	opacity:0.1;
+	background-color: #dfdfdf;
+	/*opacity:0.1;*/
 }
 
 table {
