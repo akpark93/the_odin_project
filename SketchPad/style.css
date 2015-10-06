@@ -25,7 +25,8 @@ p {
 }
 
 td {
-	background-color: #dfdfdf;
+	background-color: #000000;
+	opacity:0.1;
 }
 
 table {

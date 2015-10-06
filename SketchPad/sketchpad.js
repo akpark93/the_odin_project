@@ -31,29 +31,29 @@ function generateGrid(size,choice) {
 		//regular
 		case 0:
 			$('td').hover(function() {
-				$(this).css('background-color','black');
+				$(this).css('opacity',1);
 			});
 			break;
 		//random
 		case 1:
 			$('td').hover(function() {
 				var color = generateRandomColor();
+				$(this).css('opacity',1);
 				$(this).css('background-color', color);
 			});
 			break;
 		//trail
 		case 2:
 			$('td').mouseenter(function() {
-				$(this).animate({backgroundColor: '#000000'},'fast'),
-				$(this).animate({backgroundColor: '#dfdfdf'},'slow');
+				$(this).fadeTo('fast',1);]
+			});
+			$('td').mouseleave(function() {
+				$(this).fadeTo('slow',0.1);
 			});
 			break;
 		//opaque
-		case 3:
-			$('td').css('background-color','black');
-			$('td').css('opacity',0.1);
+		case 3:]
 			$('td').hover(function() {
-				// $(this).css('opacity', 0.1);
 				$(this).css({'opacity':'+=.1'});
 			});
 		default:
