@@ -53,6 +53,7 @@ function generateGrid(size,choice) {
 			$('td').css('background-color','black');
 			$('td').css('opacity',0.1);
 			$('td').hover(function() {
+				// $(this).css('opacity', 0.1);
 				$(this).css({'opacity':'+=.1'});
 			});
 		default:

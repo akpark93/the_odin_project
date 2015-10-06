@@ -1,21 +1,31 @@
 body {
 	text-align: center;
 	font-family: monospace;
+	background-color: #f8f8f8;
+}
+
+h1 {
+	font-family: cursive;
+	color: #655b5b;
+}
+
+p {
+	margin-top: -10px;
 }
 
 .button {
+	margin-top: 20px;
 	margin-bottom: 40px;
 }
 
 .container-grid {
 	margin: auto;
-	width:575px;
+	width:800px;
 	height:575px;
 }
 
 td {
 	background-color: #dfdfdf;
-	/*opacity:0.1;*/
 }
 
 table {
