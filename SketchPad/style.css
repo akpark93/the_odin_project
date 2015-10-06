@@ -1,0 +1,25 @@
+body {
+	text-align: center;
+	font-family: monospace;
+}
+
+.button {
+	margin-bottom: 40px;
+}
+
+.container-grid {
+	margin: auto;
+	width:575px;
+	height:575px;
+}
+
+td {
+	background-color: #000000;
+	opacity:0.1;
+}
+
+table {
+	float:right;
+	width: 100%;
+	height: 100%;
+}
