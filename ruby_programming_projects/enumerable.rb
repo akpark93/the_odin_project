@@ -70,7 +70,7 @@ module Enumerable
 end
 
 
-# @a = ["a","bit city life","c","hold on tight","e","zzzz","hit me up"]
+@a = ["a","bit city life","c","hold on tight","e","zzzz","hit me up"]
 # a = ["a","bit city life","c","hold on tight","e","zzzz","hit me up"]
 
 # @b = ["aaaaa","yoooo"]
@@ -83,7 +83,7 @@ end
 # @n.my_any? {|a| a.even?} #true
 # @n.my_none? {|a| a.even?} #false
 # @a.my_count {|a| puts a}
-# puts @a.my_map {|a| a * 3}
+puts @a.my_map {|a| a * 3}
 # puts a.map {|a| a *3}
 # puts @n.my_inject {|n,m| n+m}
 # @a.my_inject {|a,n| a += n }
