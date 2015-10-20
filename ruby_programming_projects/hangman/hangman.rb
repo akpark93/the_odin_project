@@ -1,18 +1,19 @@
-#randomly select a word 5-12 letters long
-
 class Hangman
 
 	def initialize
-		@word = randomWord
+		@word = randomWord.split("")
 		@current_word = Array.new(@word.length, "_")
-		@turns_remaining = 9
+		@turns_remaining = 8
+		@incorrect_letters = []
 	end
 
 	def introduction
+		puts ""
 		puts "Welcome to Hangman!"
-		puts "The goal of the game is to guess the word."
-		puts "You have eight guesses."
+		puts "The goal of the game is to guess the random word."
+		puts "You have a total of 8 guesses."
 		puts "Begin!"
+		puts ""
 	end
 
 	def winner?
@@ -24,22 +25,34 @@ class Hangman
 	end
 
 	def game_over
+		border
+		puts "Game Over..."
 		puts "Sorry, you lose."
+		puts "The correct word was #{@word.join}"
 		puts "Would you like to play again? (y/n)"
 		start_over
 	end
 
 	def congratulations
+		border
 		puts "Congratulations! You win!"
 		puts "Would you like to play again? (y/n)"
 		start_over
 	end
 
 	def start_over
-		answer = gets.chomp
-		if answer == 'y'
-			initialize
-			play
+		answer = gets.chomp.downcase
+		while true 
+			if answer == 'y'
+				initialize
+				play
+			elsif answer == 'n'
+				puts "Thank you for playing"
+				puts "Exiting..."
+				exit
+			else
+				puts "Invalid answer. Please type again."
+			end
 		end
 	end
 
@@ -47,7 +60,7 @@ class Hangman
 		introduction
 		letter = ""
 		while true
-			display_status(letter)
+			display_status
 			if winner?
 				congratulations
 				break
@@ -56,29 +69,46 @@ class Hangman
 				game_over
 				break
 			end
+			display_incorrect_letters
 			letter = get_letter_input
+			border
 		end
 	end
 
 	def get_letter_input
 		puts "Please input 'one' letter"
-		answer = gets.chomp
-		if answer.length > 1
-			puts "Answer too long! One letter!"
+		answer = gets.chomp.downcase
+		if answer.length > 1 || answer.match(/[^a-z]/)
+			puts "Invalid answer. Please type again"
+			get_letter_input
 		end
-		answer
+		change_status(answer)
 	end
 
-	def display_status(letter)
-		puts "word : #{@word}"
-		word_array = @word.split("")
-		if !word_array.include?(letter) || @current_word.include?(letter)
+	def change_status(answer)
+		if !@word.include?(answer)
 			@turns_remaining -= 1
+			@incorrect_letters << answer
+		elsif @current_word.include?(answer)
+			puts "Letter already used!"
+			get_letter_input
+		else
+			@word.each_with_index do |l,i|
+				@current_word[i] = answer if @word[i] == answer
+			end
 		end
-		word_array.each_with_index do |l,i|
-			@current_word[i] = letter if word_array[i] == letter
-		end
-		puts "#{@current_word} . You have #{@turns_remaining} turns remaining."
+	end
+
+	def display_status
+		puts "#{@current_word} . \nYou have #{@turns_remaining} turn(s) remaining."
+	end
+
+	def border
+		puts "--------------------------------------------------"
+	end
+
+	def display_incorrect_letters
+		puts "Incorrect letters used thus far: #{@incorrect_letters}"
 	end
 
 	def randomWord
