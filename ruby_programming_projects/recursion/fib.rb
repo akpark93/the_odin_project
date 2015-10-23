@@ -18,5 +18,5 @@ def fibs_rec(n)
 
 end
 
-puts fibs(10)
-puts fibs_rec(23)
+# puts fibs(10)
+# puts fibs_rec(23)

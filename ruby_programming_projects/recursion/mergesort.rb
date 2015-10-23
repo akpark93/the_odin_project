@@ -29,4 +29,4 @@ def merge(left, right)
 
 end
 
-puts merge_sort([1,4,7,3,2,1,45,6])
+# puts merge_sort([1,4,7,3,2,1,45,6])
