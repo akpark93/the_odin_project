@@ -142,24 +142,23 @@ class BinarySearchTree
 
 	end
 
-	def display_tree()
+	def display_tree
 
 		puts "Binary Search Tree"
-		i = 0
 		list = [@tree]
 		until list.empty?
 			node = list.shift
-			puts node.to_s
 			list << node.left_child if node.left_child != nil
 			list << node.right_child if node.right_child != nil
+			puts node.to_s
 		end
 
 	end
 
 end
 
-bst = BinarySearchTree.new([1,7,4,23,8])
-puts bst.display_tree
-puts bst.depth_first_search(1).to_s
-puts bst.breadth_first_search(23).to_s
-puts bst.dfs_rec(23).to_s
+# bst = BinarySearchTree.new([1,7,4,23,8])
+# puts bst.display_tree
+# puts bst.depth_first_search(1).to_s
+# puts bst.breadth_first_search(23).to_s
+# puts bst.dfs_rec(23).to_s
